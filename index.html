@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>두근두근 사립 특이점 고교</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="game-root" class="game-shell" aria-live="polite">
+      <section id="start-screen" class="start-screen">
+        <div class="start-copy">
+          <p class="kicker">TEKGAL VISUAL NOVEL</p>
+          <h1>두근두근 사립 특이점 고교</h1>
+          <p class="subtitle">내 짝꿍은 프론티어 모델</p>
+          <button id="start-button" class="primary-action" type="button">입학하기</button>
+        </div>
+      </section>
+
+      <section id="play-screen" class="play-screen" hidden>
+        <header class="topbar">
+          <div>
+            <p class="kicker">사립 특이점 고교</p>
+            <h2 id="scene-title">전학 첫날</h2>
+          </div>
+          <div class="day-chip" id="chapter-label">2029 졸업식 D-30</div>
+        </header>
+
+        <aside class="stat-strip" aria-label="플레이어 스탯">
+          <div class="stat">
+            <span>특뽕력</span>
+            <strong id="special-stat">0</strong>
+          </div>
+          <div class="stat">
+            <span>안전점수</span>
+            <strong id="safety-stat">0</strong>
+          </div>
+          <div class="stat">
+            <span>API 크레딧</span>
+            <strong id="credits-stat">0</strong>
+          </div>
+          <div class="stat">
+            <span>오픈소스력</span>
+            <strong id="open-stat">0</strong>
+          </div>
+          <div class="stat">
+            <span>평판</span>
+            <strong id="reputation-stat">0</strong>
+          </div>
+        </aside>
+
+        <section id="stage" class="stage school-gate" aria-label="비주얼 노벨 장면">
+          <div class="ambient-grid"></div>
+          <div id="board-feed" class="board-feed" aria-label="특갤 게시판"></div>
+          <div id="portrait-layer" class="portrait-layer"></div>
+          <div class="dialogue-box">
+            <div class="speaker-row">
+              <span id="speaker-name">시스템</span>
+              <span id="affinity-hint"></span>
+            </div>
+            <p id="dialogue-text"></p>
+            <div id="choice-panel" class="choice-panel"></div>
+          </div>
+        </section>
+
+        <section id="terminal-panel" class="terminal-panel" hidden>
+          <div class="terminal-head">
+            <span>Grok Build 방어전</span>
+            <strong id="terminal-timer">00</strong>
+          </div>
+          <pre id="terminal-output"></pre>
+          <label for="terminal-input">버그 코드 입력</label>
+          <div class="terminal-entry">
+            <input id="terminal-input" type="text" autocomplete="off" spellcheck="false" />
+            <button id="terminal-submit" type="button">패치</button>
+          </div>
+        </section>
+
+        <footer class="control-row">
+          <button id="log-button" class="ghost-action" type="button">게시판 로그</button>
+          <button id="restart-button" class="ghost-action" type="button">처음부터</button>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
