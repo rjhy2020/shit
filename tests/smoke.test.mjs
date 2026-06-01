@@ -60,6 +60,10 @@ for (const event of ["GPT-5.5", "Mythos", "Colossus", "Grok Build"]) {
 }
 
 assert.match(js, /deadline|timer|remainingTime|timeLeft/, "mini-game should track a timer");
+assert.match(js, /function startGame|addEventListener\("click", startGame\)/, "start button should use explicit startGame flow");
+assert.match(js, /scrollIntoView/, "start flow should scroll the play screen into view");
+assert.match(html, /styles\.css\?v=/, "stylesheet should be cache-busted for Chrome refreshes");
+assert.match(html, /app\.js\?v=/, "script should be cache-busted for Chrome refreshes");
 assert.match(js, /startDialogueSequence|advanceDialogue/, "dialogue should advance in short VN-style lines");
 assert.match(js, /나는 게이야/, "Sam route should include the requested gay character detail");
 assert.match(css, /@media\s*\(/, "styles.css should include responsive rules");

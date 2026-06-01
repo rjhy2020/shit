@@ -818,6 +818,15 @@ function restartGame() {
   renderScene("intro");
 }
 
+function startGame() {
+  dom.startScreen.hidden = true;
+  dom.playScreen.hidden = false;
+  renderScene("intro");
+  window.requestAnimationFrame(() => {
+    dom.playScreen.scrollIntoView({ block: "start" });
+  });
+}
+
 function formatDialogue(text) {
   return escapeHtml(text).replace(/\n/g, "<br>");
 }
@@ -838,11 +847,7 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-dom.startButton.addEventListener("click", () => {
-  dom.startScreen.hidden = true;
-  dom.playScreen.hidden = false;
-  renderScene("intro");
-});
+dom.startButton.addEventListener("click", startGame);
 
 dom.restartButton.addEventListener("click", restartGame);
 dom.logButton.addEventListener("click", () => dom.stage.classList.toggle("log-open"));
